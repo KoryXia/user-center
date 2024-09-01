@@ -1,9 +1,29 @@
 package model
 
+type Request interface {
+}
+
 type RegisterRequest struct {
-	UserName string `json:"user_name"`
-	Password string `json:"pass_word"`
+	Username string `json:"username"`
+	Password string `json:"password"`
 	Age      int    `json:"age"`
 	Gender   string `json:"gender"`
-	NickName string `json:"nick_name"`
+	Nickname string `json:"nickname"`
+}
+
+type LoginRequest struct {
+	Username string `json:"username"`
+	Password string `json:"password"`
+}
+
+type LogoutRequest struct {
+	Username string `json:"username"`
+}
+
+type UpdateRequest struct {
+	Username string `json:"username"`
+	Password string `json:"password"`
+	Age      int    `json:"age"`
+	Gender   string `json:"gender"`
+	Nickname string `json:"nickname"`
 }

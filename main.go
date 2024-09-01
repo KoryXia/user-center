@@ -1,13 +1,15 @@
 package main
 
 import (
-	"fmt"
+	log "github.com/sirupsen/logrus"
 	"user-center/global"
 	"user-center/initialize"
 )
 
 func main() {
-	fmt.Println("MySQL initialized")
+	initialize.Log()
+	log.Info("Starting user-center...")
 	global.DB = initialize.DB()
+	global.Cache = initialize.Cache()
 	initialize.ServerAndRouters()
 }
